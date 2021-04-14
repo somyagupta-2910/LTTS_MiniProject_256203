@@ -34,7 +34,7 @@ A workplace contains of thousands of employees working there and going in and ou
     * Read data from a file
 
 ## SWOT ANALYSIS
-![SWOT Analysis](https://github.com/somyagupta-2910/LTTS_MiniProject_256203/blob/main/1_Requirements/swot_analysis.png)
+![SWOT Analysis](https://github.com/somyagupta-2910/LTTS_MiniProject_256203/blob/main/1_Requirements/swot_analysis.PNG)
 
 # 4W&#39;s and 1&#39;H
 
