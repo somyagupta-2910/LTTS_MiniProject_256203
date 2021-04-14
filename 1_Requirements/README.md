@@ -23,7 +23,7 @@ A workplace contains of thousands of employees working there and going in and ou
 * Our system will interact with the following 
     * Temperature scanning product placed at the entrance
     * Employee Database
-![Description](https://github.com/arc-arnob/LnT_Mini_Project/blob/main/1_Requirements/system.png)
+![Description](https://github.com/somyagupta-2910/LTTS_MiniProject_256203/blob/main/1_Requirements/System.png)
 ### Functionalities:
 * Employee Management System applications:
     * Create a attendance record with temperature recordings
@@ -34,7 +34,7 @@ A workplace contains of thousands of employees working there and going in and ou
     * Read data from a file
 
 ## SWOT ANALYSIS
-![SWOT Analysis](https://github.com/arc-arnob/LnT_Mini_Project/blob/main/1_Requirements/swot.png)
+![SWOT Analysis](https://github.com/somyagupta-2910/LTTS_MiniProject_256203/blob/main/1_Requirements/swot_analysis.png)
 
 # 4W&#39;s and 1&#39;H
 
