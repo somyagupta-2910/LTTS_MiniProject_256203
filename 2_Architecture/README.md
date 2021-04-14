@@ -1,8 +1,15 @@
 # Architecture
 
-* Add UML Diagrams
-* For information about UML Diagrams refer: [UML Diagrams](https://www.uml-diagrams.org/uml-25-diagrams.html)
-## Tools 
-* [Draw.io](https://app.diagrams.net/)
-* [Creately](https://app.creately.com/diagram/create)
-* or any other free tools
+## High Level Design 
+* Architecture Design :
+![Architecture](https://github.com/somyagupta-2910/LTTS_MiniProject_256203/blob/main/2_Architecture/HLD.png)
+* ### Component Diagram :
+* Employee Database Component Diagram:
+![EmployeeComponentDiagram](https://github.com/somyagupta-2910/LTTS_MiniProject_256203/blob/main/2_Architecture/Employee_component_diagram.png)
+
+* Non - Employee Database Component Diagram:
+![NonEmployeeComponentDiagram](https://github.com/somyagupta-2910/LTTS_MiniProject_256203/blob/main/2_Architecture/Non_employee_component_diagram.jpg)
+
+## Low Level Design 
+
+--- TBD 
