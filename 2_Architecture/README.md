@@ -8,7 +8,7 @@
 ![EmployeeComponentDiagram](https://github.com/somyagupta-2910/LTTS_MiniProject_256203/blob/main/2_Architecture/Employee_component_diagram.png)
 
 * Non - Employee Database Component Diagram:
-![NonEmployeeComponentDiagram](https://github.com/somyagupta-2910/LTTS_MiniProject_256203/blob/main/2_Architecture/Non_employee_component_diagram.jpg)
+![NonEmployeeComponentDiagram](https://github.com/somyagupta-2910/LTTS_MiniProject_256203/blob/main/2_Architecture/Non_employee_component_diagram.png)
 
 ## Low Level Design 
 
