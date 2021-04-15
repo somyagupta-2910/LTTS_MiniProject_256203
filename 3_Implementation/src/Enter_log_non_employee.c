@@ -1,8 +1,7 @@
 #include "product.h"
 
-void enter_non_employee_details(int *non_emp_s_no)
+error_t enter_non_employee_details(Non_Employee *non_employee, int *non_emp_s_no)
 {
-    Non_Employee *non_employee;
     int tempId;
     char name[60];
     char date[10];
@@ -25,5 +24,5 @@ void enter_non_employee_details(int *non_emp_s_no)
     scanf("%s", &temperature);
     non_employee[*non_emp_s_no].temp_recorded = temperature;
 
-    return;
+    return SUCCESS;
 }

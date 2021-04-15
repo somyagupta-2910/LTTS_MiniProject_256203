@@ -1,13 +1,8 @@
 #include "product.h"
 
-int view_employee_by_parameters(int *no_of_employees)
+error_t view_employee_by_parameters(Employee *employee, int *no_of_employees, int *search_choice)
 {
-    Employee *employee;
-    int search_choice;
     int search_flag = 0;
-    printf("Enter 1 to search employee by ID.\n");
-    printf("Enter 2 to search employee by Name.\n");
-    scanf("%d", &search_choice);
     if(search_choice == 1)
     {
         int input_emp_ID;
@@ -17,17 +12,19 @@ int view_employee_by_parameters(int *no_of_employees)
         {
             if(employee[i].emp_id == input_emp_ID)
             {
+                search_flag = 1;
                 printf("Employee ID: \nName: \nDate: \nIn-Time: \nTemperature Recorded: \n", employee[i].emp_id, employee[i].name, employee[i].entry_date, employee[i].entry_time, employee[i].temp_recorded);
+                break;
             }
         }
         if(search_flag)
         {
-            return 1;
+            return SUCCESS;
         }
         else
         {
             printf("ID not found");
-            return 0;
+            return ID_DOES_NOT_EXIST;
         }
     }
     else if(search_choice == 2)
@@ -40,18 +37,20 @@ int view_employee_by_parameters(int *no_of_employees)
         {
             if (strcmp(employee[i].name, empname) == 0)
             {
+                search_flag = 1;
                 printf("Employee ID: \nName: \nDate: \nIn-Time: \nTemperature Recorded: \n", employee[i].emp_id, employee[i].name, employee[i].entry_date, employee[i].entry_time, employee[i].temp_recorded);
+                break;
             }
         }
         if(search_flag)
         {
-            return 1;
+            return SUCCESS;
         }
         else
         {
             printf("Name not found");
-            return 0;
+            return NAME_DOES_NOT_EXIST;
         }
     }
-    return 0;
+    return WRONG_CHOICE;
 }

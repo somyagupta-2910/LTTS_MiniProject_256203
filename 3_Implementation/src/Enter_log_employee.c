@@ -1,9 +1,8 @@
 #include "product.h"
 
 
-void enter_employee_details(int *emp_s_no)
+error_t enter_employee_details(Employee *employee, int *emp_s_no)
 {
-    Employee *employee;
     int employeeId;
     char name[60];
     char date[10];
@@ -26,5 +25,5 @@ void enter_employee_details(int *emp_s_no)
     scanf("%s", &temperature);
     employee[*emp_s_no].temp_recorded = temperature;
 
-    return;
+    return SUCCESS;
 }

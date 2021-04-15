@@ -1,8 +1,7 @@
 #include "product.h"
 
-int view_employees_temperature(int *no_of_employees)
+error_t view_employees_temperature(Employee *employee, int *no_of_employees, int *temp_choice)
 {
-    Employee *employee;
     int temp_choice;
     printf("Enter 1 to view employees with normal temperatures\n");
     printf("Enter 2 to view employees with abnormal temperatures\n");
@@ -16,7 +15,7 @@ int view_employees_temperature(int *no_of_employees)
                 printf("Employee ID: \nName: \nDate: \nIn-Time: \nTemperature Recorded: \n", employee[i].emp_id, employee[i].name, employee[i].entry_date, employee[i].entry_time, employee[i].temp_recorded);
             }
         }
-        return 1;
+        return NORMAL_TEMP;
     }
     else if(temp_choice == 2)
     {
@@ -27,7 +26,7 @@ int view_employees_temperature(int *no_of_employees)
                 printf("Employee ID: \nName: \nDate: \nIn-Time: \nTemperature Recorded: \n", employee[i].emp_id, employee[i].name, employee[i].entry_date, employee[i].entry_time, employee[i].temp_recorded);
             }
         }
-        return 2;
+        return ABNORMAL_TEMP;
     }
-    return 0;
+    return WRONG_CHOICE;
 }
