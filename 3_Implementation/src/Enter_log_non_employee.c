@@ -1,11 +1,8 @@
 #include "product.h"
 
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-
-void enter_non_employee_details(Non_Employee *non_employee, int *non_emp_s_no)
+void enter_non_employee_details(int *non_emp_s_no)
 {
+    Non_Employee *non_employee;
     int tempId;
     char name[60];
     char date[10];

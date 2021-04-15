@@ -44,9 +44,10 @@ typedef struct Non_Employee
  * 
  */
 typedef enum error_t{
-    SUCCESS = 1,
+    START = 1,
     ID_EXISTS=2,
-    INVALID_NAME=3
+    INVALID_NAME=3,
+    SUCCESS = 4
 }error_t;
 
 /**
@@ -55,7 +56,7 @@ typedef enum error_t{
  * @param employee All the details of the employee is stored in the employee structure
  * @param emp_s_no indicating the entry number of that employee
  */
-void enter_employee_details(Employee *employee, int *emp_s_no);
+void enter_employee_details(int *emp_s_no);
 
 /**
  * @brief Creates a log of the employee details when he enters the workplace and scans his/her temperature
@@ -63,6 +64,16 @@ void enter_employee_details(Employee *employee, int *emp_s_no);
  * @param non_employee All the details of the non-employee is stored in the non_employee structure
  * @param non_emp_s_no indicating the entry number of that person
  */
-void enter_non_employee_details(Non_Employee *non_employee, int *non_emp_s_no);
+void enter_non_employee_details(int *non_emp_s_no);
+
+int view_employees_visited(int *no_of_employees_to_be_viewed);
+
+int view_non_employees_visited(int *no_of_non_employees_to_be_viewed);
+
+int view_employees_temperature(int *no_of_employees);
+
+int view_non_employees_temperature(int *no_of_non_employees);
+
+int view_employee_by_parameters(int *no_of_employees);
 
 #endif

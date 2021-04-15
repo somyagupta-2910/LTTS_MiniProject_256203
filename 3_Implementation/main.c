@@ -18,7 +18,7 @@ int main()
         printf("Wrong input detected, Please enter the correct choice\n");
     }
     
-    fp = fopen("database.txt", "a+"); 
+    fp = fopen("employee_database.txt", "a+");
     int choice;
     while(1)
     {
@@ -26,15 +26,13 @@ int main()
         printf("Enter 2 Create a record list for a particular day of non-employees\n");
         printf("Enter 3 to list employees visited in a day\n");
         printf("Enter 4 to list non-employees visited in a day\n");
-        printf("Enter 5 to list employees with abnormal temperatures\n");
-        printf("Enter 6 to list all the non-employees with abnormal temperatures\n");
-        printf("Enter 7 to list all the employees with normal temperatures\n");
-        printf("Enter 8 to list all the non-employees with normal temperatures\n");
-        printf("Enter 9 to update employee data\n");
-        printf("Enter 10 to save data to file\n"); 
-        printf("Enter 11 to print data from file\n");
-        printf("Enter 12 to delete data from record");
-        printf("Enter 13 to display all records\n");
+        printf("Enter 5 to list employees temperatures\n");
+        printf("Enter 6 to list all the non-employees temperatures\n");
+        printf("Enter 7 to view an employee\n");
+        printf("Enter 8 to save data to file\n"); 
+        printf("Enter 9 to print data from file\n");
+        printf("Enter 10 to delete data from record");
+        printf("Enter 11 to display all records\n");
         printf("Enter -1 to exit.\n");
         printf("Enter your choice\n");
         scanf("%d", &choice);
@@ -52,33 +50,59 @@ int main()
                     int emp_s_no;
                     printf("Enter Data Entry Number\n");
                     scanf("%d", &emp_s_no);
-                    void enter_employee_details(Employee *employee, int *emp_s_no);
+                    enter_employee_details(&emp_s_no);
                     break;
 
                 case 2:
                     int non_emp_s_no;
                     printf("Enter Data Entry Number\n");
-                    void enter_non_employee_details(Non_Employee *non_employee, int *non_emp_s_no);
+                    scanf("%d", &non_emp_s_no);
+                    enter_non_employee_details(&non_emp_s_no);
                     break;
 
                 case 3:
-                    printf("Thanks\n");
+                    int no_of_employees_to_be_viewed;
+                    printf("Enter the number of employees to be viewed\n");
+                    scanf("%d", &no_of_employees_to_be_viewed);
+                    view_employees_visited(&no_of_employees_to_be_viewed);
                     break;
                 
                 case 4:
-                    printf("Thanks\n");
+                    int no_of_non_employees_to_be_viewed;
+                    printf("Enter the number of non-employees to be viewed\n");
+                    scanf("%d", &no_of_non_employees_to_be_viewed);
+                    view_non_employees_visited(&no_of_non_employees_to_be_viewed);
                     break;
 
                 case 5:
-                    printf("Thanks\n");
+                    int no_of_employees;
+                    printf("Enter the number of employees whose temperature has to be viewed\n");
+                    scanf("%d", &no_of_employees);
+                    if(view_employees_temperature(&no_of_employees) == 0)
+                    {
+                        printf("Wrong choice entered for temperature selection. Choose the correct option.\n");
+                        continue;
+                    }
                     break;
 
                 case 6:
-                    printf("Thanks\n");
+                    int no_of_non_employees;
+                    printf("Enter the number of non-employees whose temperature has to be viewed\n");
+                    scanf("%d", &no_of_non_employees);
+                    if(view_non_employees_temperature(&no_of_non_employees) == 0)
+                    {
+                        printf("Wrong choice entered for temperature selection. Choose the correct option.\n");
+                        continue;
+                    }
                     break;
 
                 case 7:
-                    printf("Thanks\n");
+                    int no_of_employees;
+                    if(view_employee_by_parameters(&no_of_employees) == 0);
+                    {
+                        printf("Wrong choice entered.\n");
+                        continue;
+                    }
                     break;
 
                 case 8:

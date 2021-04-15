@@ -1,11 +1,9 @@
 #include "product.h"
 
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
 
-void enter_employee_details(Employee *employee, int *emp_s_no)
+void enter_employee_details(int *emp_s_no)
 {
+    Employee *employee;
     int employeeId;
     char name[60];
     char date[10];
