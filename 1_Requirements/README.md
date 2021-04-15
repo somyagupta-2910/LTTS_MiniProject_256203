@@ -58,14 +58,26 @@ A workplace contains of thousands of employees working there and going in and ou
 ## High Level Requirements: 
 | ID | Description | Category | Status | 
 | ----- | ----- | ------- | ---------|
-| HR01 | User shall be able to add the employee data recieved from the scanning product to the database | Techincal | TBD-S1 | 
-| HR02 | User shall be able to read the employee data | Techincal | TBD-S1 |
-| HR03 | User shall be able to update the employee data | Techincal | TBD-S1 |
-| HR04 | User shall be able to delete the employee data | Techincal | TBD-S1 |
-| HR05 | User shall be able to save all the data in a file | Techincal | TBD-S1 |
-| HR06 | User shall be able to read data from a file | Techincal | TBD-S1 |
-| HR07 | The sensitive data should not be leaked or compromised | Scenario | FUTURE |
-| HR08 | User shall create a seperate record for non-employees or visitors | Technical | TBD-S1 |
+| HR01 | User shall be able to add the employee data recieved from the scanning product to the database | Techincal | IMPLEMENTED | 
+| HR02 | User shall be able to read the employee data | Techincal | IMPLEMENTED |
+| HR03 | User shall be able to update the employee data | Techincal | IMPLEMENTED |
+| HR04 | User shall be able to save all the data in a file | Techincal | IMPLEMENTED |
+| HR05 | User shall be able to read data from a file | Techincal | IMPLEMENTED |
+| HR06 | The sensitive data should not be leaked or compromised | Scenario | FUTURE |
+| HR07 | User shall create a seperate record for non-employees or visitors | Technical | IMPLEMENTED |
+
 ##  Low level Requirements:
 
---- TBD
+All the data log will be taken as input from the sensor output in actual product
+
+| ID | Description | HLR ID | Status (Implemented/Future) |
+| ------ | --------- | ------ | ----- |
+| LR01 | All the data log will be taken as input from the sensor output in actual product | HR01 |  IMPLEMENTED  |
+| LR02 | Reading employee data can be possible in 2 ways (1) first being by searching by id of an employee. (2) being searched by name of an employee | HR02 |  IMPLEMENTED |
+| LR03 | The employee data can be read and compared on basis of temperature recorded | HR02 | IMPLEMENTED |
+| LR04 | The employee data can be read and compared on basis of temperature recorded | HR02 |  IMPLEMENTED  |
+| LR05 | User need to search by id for the employee record, if no such record is found then "ID Does Not Exist" Message should be displayed | HR03 |  IMPLEMENTED  |
+| LR06 | User need to search by name for the employee record, if no such record is found then "Name Does Not Exist" Message should be displayed | HR04 |  IMPLEMENTED  |
+| LR05 | User shall be able to save and write to the files | HR05 |  IMPLEMENTED  |
+| LR06 | If opening of the file fails, then "File Does Not exist"  Message should be displayed | HR03, HR04, HR05 |  IMPLEMENTED  |
+| LR07 | Seperate records are to be maintained for employee and non-employee in the database | HR07 |  IMPLEMENTED  |
