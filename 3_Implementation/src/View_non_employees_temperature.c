@@ -1,10 +1,10 @@
 #include "product.h"
 
-error_t view_non_employees_temperature(Non_Employee *non_employee, int *no_of_non_employees, int *temp_choice)
+error_t view_non_employees_temperature(Non_Employee *non_employee, int no_of_non_employees, int temp_choice)
 {
     if(temp_choice == 1)
     {
-        for(int i=0; i<*no_of_non_employees; i++)
+        for(int i=0; i<no_of_non_employees; i++)
         {
             if(non_employee[i].temp_recorded < 38.00)
             {
@@ -15,7 +15,7 @@ error_t view_non_employees_temperature(Non_Employee *non_employee, int *no_of_no
     }
     else if(temp_choice == 2)
     {
-        for(int i=0; i<*no_of_non_employees; i++)
+        for(int i=0; i<no_of_non_employees; i++)
         {
             if(non_employee[i].temp_recorded >= 38.00)
             {

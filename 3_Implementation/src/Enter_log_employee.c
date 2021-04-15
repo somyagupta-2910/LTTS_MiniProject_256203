@@ -1,7 +1,7 @@
 #include "product.h"
 
 
-error_t enter_employee_details(Employee *employee, int *emp_s_no)
+error_t enter_employee_details(Employee *employee, int emp_s_no)
 {
     int employeeId;
     char name[60];
@@ -11,19 +11,19 @@ error_t enter_employee_details(Employee *employee, int *emp_s_no)
 	printf("Attendance System Loading...\n");
 	printf("Enter your Employee ID\n");
     scanf("%d", &employeeId);
-    employee[*emp_s_no].emp_id = employeeId;
+    employee[emp_s_no].emp_id = employeeId;
     printf("Enter your name\n");
     scanf("%s", &name);
-    strcpy(employee[*emp_s_no].name, name);
+    strcpy(employee[emp_s_no].name, name);
     printf("Enter date\n");
     scanf("%s", &date);
-    strcpy(employee[*emp_s_no].entry_date, date);
+    strcpy(employee[emp_s_no].entry_date, date);
     printf("Enter In-time\n");
     scanf("%s", &time);
-    strcpy(employee[*emp_s_no].entry_time, time);
+    strcpy(employee[emp_s_no].entry_time, time);
     printf("Enter temperature\n");
     scanf("%s", &temperature);
-    employee[*emp_s_no].temp_recorded = temperature;
+    employee[emp_s_no].temp_recorded = temperature;
 
     return SUCCESS;
 }

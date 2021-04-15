@@ -1,6 +1,6 @@
 #include "product.h"
 
-error_t view_employee_by_parameters(Employee *employee, int *no_of_employees, int *search_choice)
+error_t view_employee_by_parameters(Employee *employee, int no_of_employees, int search_choice)
 {
     int search_flag = 0;
     if(search_choice == 1)
@@ -8,7 +8,7 @@ error_t view_employee_by_parameters(Employee *employee, int *no_of_employees, in
         int input_emp_ID;
         printf("Enter the ID to be searched.\n");
         scanf("%d", &input_emp_ID);
-        for(int i=0; i<*no_of_employees; i++)
+        for(int i=0; i<no_of_employees; i++)
         {
             if(employee[i].emp_id == input_emp_ID)
             {
@@ -29,11 +29,11 @@ error_t view_employee_by_parameters(Employee *employee, int *no_of_employees, in
     }
     else if(search_choice == 2)
     {
-        char empname;
+        char empname[30];
         printf("Please Enter Employee Name: \n");
         scanf("%s", &empname);
         printf("\nSearch Result.\n\n");
-        for (int i = 0; i < *no_of_employees; i++)
+        for (int i = 0; i < no_of_employees; i++)
         {
             if (strcmp(employee[i].name, empname) == 0)
             {
