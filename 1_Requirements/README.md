@@ -23,6 +23,7 @@ A workplace contains of thousands of employees working there and going in and ou
 * Our system will interact with the following 
     * Temperature scanning product placed at the entrance
     * Employee Database
+    
 ![Description](https://github.com/somyagupta-2910/LTTS_MiniProject_256203/blob/main/1_Requirements/System.png)
 ### Functionalities:
 * Employee Management System applications:
