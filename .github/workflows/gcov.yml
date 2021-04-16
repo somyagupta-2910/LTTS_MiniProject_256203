@@ -1,5 +1,3 @@
-# This is a basic workflow to help you get started with Actions
-
 name: CI-Coverage
 
 # Controls when the action will run. 
@@ -26,4 +24,4 @@ jobs:
     - name: Install gcov 
       run: sudo apt -y install gcovr
     - name: make coverage
-      run: make -C 3_Implementation/ coverage
+      run: make coverage -C 3_Implementation/ 
