@@ -41,14 +41,14 @@ else
    ifeq ($(shell uname), Linux)
       RM = rm -rf
       FixPath = $1
-	  	  EXEC = out
+	  EXEC = out
    endif
 endif
 
 .PHONY : all test coverage run clean doc
 
 all:$(BUILD_DIR)
-	gcc $(INC)  $(SRC)  -o $(call FixPath,$(BUILD_DIR)/$(PROJ_NAME).$(EXEC))
+	gcc $(INC)  $(SRC) main.c -o $(call FixPath,$(BUILD_DIR)/$(PROJ_NAME).$(EXEC))
 
 run: all
 	$(call FixPath,$(BUILD_DIR)/$(PROJ_NAME).$(EXEC))

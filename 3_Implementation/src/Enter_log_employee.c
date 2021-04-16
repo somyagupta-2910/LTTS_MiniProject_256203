@@ -13,16 +13,16 @@ error_t enter_employee_details(Employee *employee, int emp_s_no)
     scanf("%d", &employeeId);
     employee[emp_s_no].emp_id = employeeId;
     printf("Enter your name\n");
-    scanf("%s", &name);
+    scanf("%s", name);
     strcpy(employee[emp_s_no].name, name);
     printf("Enter date\n");
-    scanf("%s", &date);
+    scanf("%s", date);
     strcpy(employee[emp_s_no].entry_date, date);
     printf("Enter In-time\n");
-    scanf("%s", &time);
+    scanf("%s", time);
     strcpy(employee[emp_s_no].entry_time, time);
     printf("Enter temperature\n");
-    scanf("%s", &temperature);
+    scanf("%f", &temperature);
     employee[emp_s_no].temp_recorded = temperature;
 
     return SUCCESS;

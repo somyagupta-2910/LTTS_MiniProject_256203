@@ -12,16 +12,16 @@ error_t enter_non_employee_details(Non_Employee *non_employee, int non_emp_s_no)
     scanf("%d", &tempId);
     non_employee[non_emp_s_no].temp_id = tempId;
     printf("Enter your name\n");
-    scanf("%s", &name);
+    scanf("%s", name);
     strcpy(non_employee[non_emp_s_no].name, name);
     printf("Enter date\n");
-    scanf("%s", &date);
+    scanf("%s", date);
     strcpy(non_employee[non_emp_s_no].entry_date, date);
     printf("Enter In-time\n");
-    scanf("%s", &time);
+    scanf("%s", time);
     strcpy(non_employee[non_emp_s_no].entry_time, time);
     printf("Enter temperature\n");
-    scanf("%s", &temperature);
+    scanf("%f", &temperature);
     non_employee[non_emp_s_no].temp_recorded = temperature;
 
     return SUCCESS;

@@ -31,7 +31,7 @@ error_t view_employee_by_parameters(Employee *employee, int no_of_employees, int
     {
         char empname[30];
         printf("Please Enter Employee Name: \n");
-        scanf("%s", &empname);
+        scanf("%s", empname);
         printf("\nSearch Result.\n\n");
         for (int i = 0; i < no_of_employees; i++)
         {

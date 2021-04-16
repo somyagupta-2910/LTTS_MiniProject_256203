@@ -17,22 +17,16 @@ void tearDown()
 
 void view_employee_temp(void)
 {
-    int temp_choice = 0;
-    TEST_ASSERT_EQUAL(WRONG_CHOICE, view_employees_temperature(employee, no_of_employees, temp_choice));
-    int temp_choice = 1;
-    TEST_ASSERT_EQUAL(NORMAL_TEMP, view_employees_temperature(employee, no_of_employees, temp_choice));
-    int temp_choice = 2;
-    TEST_ASSERT_EQUAL(ABNORMAL_TEMP, view_employees_temperature(employee, no_of_employees, temp_choice));
+    TEST_ASSERT_EQUAL(WRONG_CHOICE, view_employees_temperature(employee, no_of_employees, 0));
+    TEST_ASSERT_EQUAL(NORMAL_TEMP, view_employees_temperature(employee, no_of_employees, 1));
+    TEST_ASSERT_EQUAL(ABNORMAL_TEMP, view_employees_temperature(employee, no_of_employees, 2));
 }
 
 void view_non_employee_temp(void)
 {
-    int temp_choice = 0;
-    TEST_ASSERT_EQUAL(WRONG_CHOICE, view_non_employees_temperature(non_employee, no_of_non_employees, temp_choice));
-    temp_choice == 1;
-    TEST_ASSERT_EQUAL(NORMAL_TEMP, view_non_employees_temperature(non_employee, no_of_non_employees, temp_choice));
-    temp_choice == 2;
-    TEST_ASSERT_EQUAL(ABNORMAL_TEMP, view_non_employees_temperature(non_employee, no_of_non_employees, temp_choice));
+    TEST_ASSERT_EQUAL(WRONG_CHOICE, view_non_employees_temperature(non_employee, no_of_non_employees, 0));
+    TEST_ASSERT_EQUAL(NORMAL_TEMP, view_non_employees_temperature(non_employee, no_of_non_employees, 1));
+    TEST_ASSERT_EQUAL(ABNORMAL_TEMP, view_non_employees_temperature(non_employee, no_of_non_employees, 2));
 }
 
 void write_emp(void)

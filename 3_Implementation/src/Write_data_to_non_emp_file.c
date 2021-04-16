@@ -3,7 +3,7 @@
 error_t write_non_emp_file(Non_Employee *non_employee, int no_of_non_employees)
 {
     FILE *fp;
-	fp = fopen("non_empoyee_database.txt","w");
+	fp = fopen("non_employee_database.txt","w");
 	if(fp == NULL)
 	{
 		printf("File does not exist\n");
