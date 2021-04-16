@@ -1,8 +1,12 @@
-PROJECT_NAME = Employee_Management_System
+CC = gcc
+CFLAGS = -Wall -g
 
-TEST_PROJ_NAME = Test_$(PROJ_NAME)
+INC = -Iinc -Iunity
+LINK = -lm
 
-BUILD_DIR = Build
+UNITY_SRC = unity/unity.c
+
+PROJECT = Employee_Management_System
 
 SRC = src/Enter_log_employee.c \
 src/Enter_log_non_employee.c \
@@ -14,70 +18,33 @@ src/View_non_employees_visited.c \
 src/Write_data_to_emp_file.c \
 src/Write_data_to_non_emp_file.c
 
-TEST_SRC = src/Enter_log_employee.c \
-src/Enter_log_non_employee.c \
-src/View_employee_by_parameter.c \
-src/View_employees_temperature.c \
-src/View_employees_visited.c \
-src/View_non_employees_temperature.c \
-src/View_non_employees_visited.c \
-src/Write_data_to_emp_file.c \
-src/Write_data_to_non_emp_file.c \
-test/test.c \
-unity/unity.c 
+MAIN = main.c
 
-INC = -I inc -I unity
-TEST_OUTPUT = $(BUILD)/Test_$(PROJECT_NAME).out
+ifeq ($(OS),Windows_NT)
+	RM = rm
+	EXEC = $(PROJECT).out
+	exeEXEC_TEST = test/test_$(PROJECT).out
 
-#INCLUDE_LIBS = 
-INCLUDE_LIBS = -lcunit
-
-#To check if the OS is Windows or Linux and set the executable file extension and delete command accordingly
-ifdef OS
-   RM = del /q
-   FixPath = $(subst /,\,$1)
-   EXEC = exe
 else
-   ifeq ($(shell uname), Linux)
-      RM = rm -rf
-      FixPath = $1
-	  EXEC = out
-   endif
-endif
+	RM = rm
+	EXEC = $(PROJECT).out
+	EXEC_TEST = test/test_$(PROJECT).out
 
-.PHONY : all test coverage run clean doc
+endif 
+ $(EXEC) : $(SRC) $(MAIN)
+	$(CC) $(CFLAGS) $(INC) $^ -o $@ $(LINK)
 
-all:$(BUILD_DIR)
-	gcc $(INC)  $(SRC) main.c -o $(call FixPath,$(BUILD_DIR)/$(PROJ_NAME).$(EXEC))
+run : $(EXEC)
+	./$(EXEC)
 
-run: all
-	$(call FixPath,$(BUILD_DIR)/$(PROJ_NAME).$(EXEC))
-
-
-coverage:${PROJECT_NAME}
-	gcc -fprofile-arcs -ftest-coverage $(TEST_SRC)  $(INC) -o $(call FixPath,$(BUILD_DIR)/$(TEST_PROJ_NAME).$(EXEC))
-	$(call FixPath,$(BUILD_DIR)/$(TEST_PROJ_NAME).$(EXEC))
-	gcov -a Enter_log_employee.c Enter_log_non_employee.c View_employee_by_parameter.c View_employees_temperature.c View_employees_visited.c View_non_employees_temperature.c View_non_employees_visited.c Write_data_to_emp_file.c Write_data_to_non_emp_file.c
-
-
-
-
-staticcheck:
-	cppcheck --enable=all .
-
-
-codesize:
-	size $(call FixPath,$(BUILD_DIR)/$(PROJ_NAME).$(EXEC))
-
-$(BUILD_DIR):
-	mkdir $(BUILD_DIR)
-test:$(BUILD)
-	gcc $(TEST_SRC) $(INC) -o test.$(EXEC)
-	./test.$(EXEC)
-valgrind:
-	valgrind ./test.$(EXEC)
 clean:
-	$(RM) $(call FixPath,$(BUILD_DIR)/*)
-	$(RM) *.gcov 
-	$(RM) *.gcda
-	$(RM) *.gcno
+	$(RM) $(EXEC)
+
+valgrind: $(EXEC) 
+	valgrind ./$(EXEC)
+
+$(EXEC_TEST): $(UNITY_SRC) $(SRC) test/test.c
+	$(CC) $(CFLAGS) $(INC) $^ -o $@ $(LINK)
+
+runtests: $(EXEC_TEST)
+	./$(EXEC_TEST)
