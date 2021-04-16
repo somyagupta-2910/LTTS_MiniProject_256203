@@ -14,3 +14,6 @@
 
 * State Diagram:
 ![StateDiagram](https://github.com/somyagupta-2910/LTTS_MiniProject_256203/blob/main/2_Architecture/State_diagram.png)
+
+* Class Diagram:
+![StateDiagram](https://github.com/somyagupta-2910/LTTS_MiniProject_256203/blob/main/2_Architecture/Class_Diagram.png)
