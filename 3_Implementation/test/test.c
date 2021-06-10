@@ -2,9 +2,9 @@
 
 #include "unity.h"
 
-Employee employee[1000];
+struct Employee employee[1000];
 int no_of_employees = 0;
-Non_Employee non_employee[1000];
+struct Non_Employee non_employee[1000];
 int no_of_non_employees = 0;
 /* Required by the unity test framework */
 void setUp()

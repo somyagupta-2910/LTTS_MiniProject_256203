@@ -1,6 +1,6 @@
 #include "product.h"
 
-error_t write_emp_file(Employee *employee, int no_of_employees)
+error_t write_emp_file(struct Employee *employee, int no_of_employees)
 {
 	FILE *fp;
 	fp = fopen("employee_database.txt","w");

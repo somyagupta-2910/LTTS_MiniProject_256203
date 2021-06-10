@@ -1,7 +1,7 @@
 #include "product.h"
 
 
-error_t enter_employee_details(Employee *employee, int emp_s_no)
+error_t enter_employee_details(struct Employee *employee, int emp_s_no)
 {
     int employeeId;
     char name[60];

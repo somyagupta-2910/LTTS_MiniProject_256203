@@ -1,6 +1,6 @@
 #include "product.h"
 
-error_t view_employees_visited(Employee *employee, int no_of_employees_to_be_viewed)
+error_t view_employees_visited(struct Employee *employee, int no_of_employees_to_be_viewed)
 {
     for (int i = 0; i < no_of_employees_to_be_viewed; i++)
     {

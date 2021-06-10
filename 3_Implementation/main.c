@@ -2,9 +2,9 @@
 
 int main()
 {
-    Employee employee[1000];
+    struct Employee employee[1000];
     int no_of_employees = 0;
-    Non_Employee non_employee[1000];
+    struct Non_Employee non_employee[1000];
     int no_of_non_employees = 0;
     FILE *fp_emp = NULL; /*Intializing the file pointer for employee database file*/
     FILE *fp_non_emp = NULL;/*Intializing the file pointer for non-employee database file*/

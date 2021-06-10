@@ -1,6 +1,6 @@
 #include "product.h"
 
-error_t view_employees_temperature(Employee *employee, int no_of_employees, int temp_choice)
+error_t view_employees_temperature(struct Employee *employee, int no_of_employees, int temp_choice)
 {
     if(temp_choice == 1)
     {

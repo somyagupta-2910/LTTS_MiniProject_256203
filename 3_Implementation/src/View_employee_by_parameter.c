@@ -1,6 +1,6 @@
 #include "product.h"
 
-error_t view_employee_by_parameters(Employee *employee, int no_of_employees, int search_choice)
+error_t view_employee_by_parameters(struct Employee *employee, int no_of_employees, int search_choice)
 {
     int search_flag = 0;
     if(search_choice == 1)
