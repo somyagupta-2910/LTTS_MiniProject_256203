@@ -6,28 +6,28 @@ BUILD = build
 
 # All source code files
 SRC = main.c\
-src/Enter_log_employee.c \
-src/Enter_log_non_employee.c \
-src/View_employee_by_parameter.c \
-src/View_employees_temperature.c \
-src/View_employees_visited.c \
-src/View_non_employees_temperature.c \
-src/View_non_employees_visited.c \
-src/Write_data_to_emp_file.c \
+src/Enter_log_employee.c\
+src/Enter_log_non_employee.c\
+src/View_employee_by_parameter.c\
+src/View_employees_temperature.c\
+src/View_employees_visited.c\
+src/View_non_employees_temperature.c\
+src/View_non_employees_visited.c\
+src/Write_data_to_emp_file.c\
 src/Write_data_to_non_emp_file.c
 
 # All test source files
-TEST_SRC = src/Enter_log_employee.c \
-src/Enter_log_non_employee.c \
-src/View_employee_by_parameter.c \
-src/View_employees_temperature.c \
-src/View_employees_visited.c \
-src/View_non_employees_temperature.c \
-src/View_non_employees_visited.c \
-src/Write_data_to_emp_file.c \
-src/Write_data_to_non_emp_file.c \
-test/test.c \
-unity/unity.c \
+TEST_SRC = src/Enter_log_employee.c\
+src/Enter_log_non_employee.c\
+src/View_employee_by_parameter.c\
+src/View_employees_temperature.c\
+src/View_employees_visited.c\
+src/View_non_employees_temperature.c\
+src/View_non_employees_visited.c\
+src/Write_data_to_emp_file.c\
+src/Write_data_to_non_emp_file.c\
+test/test.c\
+unity/unity.c\
 
 TEST_OUTPUT = $(BUILD)/Test_$(PROJECT_NAME).out
 
