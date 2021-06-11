@@ -1,7 +1,10 @@
 #include "product.h"
 
-error_t enter_non_employee_details(struct Non_Employee *non_employee, int non_emp_s_no)
+error_t enter_non_employee_details(struct Non_Employee *non_employee)
 {
+    int non_emp_s_no; 
+    printf("Enter Data Entry Number\n");
+    scanf("%d", &non_emp_s_no);
     int tempId;
     char name[60];
     char date[10];

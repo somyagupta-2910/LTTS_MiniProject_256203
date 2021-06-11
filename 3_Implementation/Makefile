@@ -8,7 +8,8 @@ BUILD = build
 SRC = main.c\
 src/Enter_log_employee.c\
 src/Enter_log_non_employee.c\
-src/View_employee_by_parameter.c\
+src/View_employee_by_ID.c\
+src/View_employee_by_Name.c\
 src/View_employees_temperature.c\
 src/View_employees_visited.c\
 src/View_non_employees_temperature.c\
@@ -19,7 +20,8 @@ src/Write_data_to_non_emp_file.c
 # All test source files
 TEST_SRC = src/Enter_log_employee.c\
 src/Enter_log_non_employee.c\
-src/View_employee_by_parameter.c\
+src/View_employee_by_ID.c\
+src/View_employee_by_Name.c\
 src/View_employees_temperature.c\
 src/View_employees_visited.c\
 src/View_non_employees_temperature.c\
@@ -52,11 +54,11 @@ $(PROJECT_NAME):all
 .PHONY: run clean test doc all
 
 all: $(SRC) $(BUILD)
-	gcc $(SRC) $(INC) -o $(PROJECT_OUTPUT)
+	gcc $(SRC) $(INC) -o $(PROJECT_OUTPUT).out
 
 # Call `make run` to run the application
 run:$(PROJECT_NAME)
-	./$(PROJECT_OUTPUT)
+	./$(PROJECT_OUTPUT).out
 
 # Document the code using Doxygen
 doc:
@@ -82,7 +84,7 @@ sanitize_check:
 coverage:$(TEST_SRC)
 	gcc -fprofile-arcs -ftest-coverage $(TEST_SRC) $(INC) -o $(TEST_OUTPUT) $(INCLUDE_LIBS)
 	./$(TEST_OUTPUT)
-	gcov -a Enter_log_employee.c Enter_log_non_employee.c View_employee_by_parameter.c View_employees_temperature.c View_employees_visited.c View_non_employees_temperature.c View_non_employees_visited.c Write_data_to_emp_file.c Write_data_to_non_emp_file.c
+	gcov -a Enter_log_employee.c Enter_log_non_employee.c View_employee_by_ID.c View_employee_by_Name.c View_employees_temperature.c View_employees_visited.c View_non_employees_temperature.c View_non_employees_visited.c Write_data_to_emp_file.c Write_data_to_non_emp_file.c
 
 # Remove all the built files, invoke by `make clean`
 clean:

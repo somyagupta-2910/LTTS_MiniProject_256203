@@ -39,10 +39,7 @@ void write_non_emp(void)
     TEST_ASSERT_EQUAL(SUCCESS, write_non_emp_file(non_employee, no_of_non_employees));
 }
 
-void view_param(void)
-{
-    TEST_ASSERT_EQUAL(WRONG_CHOICE, view_employee_by_parameters(employee, no_of_employees, 0));
-}
+
 int main(void)
 {
     /* Initiate the Unity Test Framework */
@@ -53,7 +50,6 @@ int main(void)
     RUN_TEST(view_non_employee_temp);
     RUN_TEST(write_emp);
     RUN_TEST(write_non_emp);
-    RUN_TEST(view_param);
 
     /* Close the Unity Test Framework */
     return UNITY_END();

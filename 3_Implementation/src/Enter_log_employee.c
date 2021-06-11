@@ -1,8 +1,11 @@
 #include "product.h"
 
 
-error_t enter_employee_details(struct Employee *employee, int emp_s_no)
+error_t enter_employee_details(struct Employee *employee)
 {
+    int emp_s_no; 
+    printf("Enter Data Entry Number\n");
+    scanf("%d", &emp_s_no); 
     int employeeId;
     char name[60];
     char date[10];

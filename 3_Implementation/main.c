@@ -6,6 +6,7 @@ int main()
     int no_of_employees = 0;
     struct Non_Employee non_employee[1000];
     int no_of_non_employees = 0;
+
     FILE *fp_emp = NULL; /*Intializing the file pointer for employee database file*/
     FILE *fp_non_emp = NULL;/*Intializing the file pointer for non-employee database file*/
 
@@ -46,10 +47,11 @@ int main()
         printf("Enter 4 to list non-employees visited in a day\n");
         printf("Enter 5 to list employees temperatures\n");
         printf("Enter 6 to list all the non-employees temperatures\n");
-        printf("Enter 7 to view an employee\n");
+        printf("Enter 7 to search for an employee by ID\n");
+        printf("Enter 8 to search for an employee by Name\n");
         printf("Enter 8 to write data to employee database file\n"); 
         printf("Enter 9 to write data to non-employee database file\n");
-        printf("Enter -1 to exit.\n");
+        printf("Enter -1 to exit.\n\n");
         printf("Enter your choice\n");
         scanf("%d", &choice);
 
@@ -63,31 +65,19 @@ int main()
             switch(choice)
             {
                 case 1:
-                    int emp_s_no; 
-                    printf("Enter Data Entry Number\n");
-                    scanf("%d", &emp_s_no); 
-                    enter_employee_details(employee, emp_s_no);
+                    enter_employee_details(employee);
                     break;
 
-                case 2:
-                    int non_emp_s_no; 
-                    printf("Enter Data Entry Number\n");
-                    scanf("%d", &non_emp_s_no); 
-                    enter_non_employee_details(non_employee, non_emp_s_no);
+                case 2: 
+                    enter_non_employee_details(non_employee);
                     break;
 
                 case 3:
-                    int no_of_employees_to_be_viewed; 
-                    printf("Enter the number of employees to be viewed\n");
-                    scanf("%d", &no_of_employees_to_be_viewed);
-                    view_employees_visited(employee, no_of_employees_to_be_viewed);
+                    view_employees_visited(employee);
                     break;
                 
                 case 4:
-                    int no_of_non_employees_to_be_viewed;
-                    printf("Enter the number of non-employees to be viewed\n");
-                    scanf("%d", &no_of_non_employees_to_be_viewed);
-                    view_non_employees_visited(non_employee, no_of_non_employees_to_be_viewed);
+                    view_non_employees_visited(non_employee);
                     break;
 
                 case 5:
@@ -123,26 +113,19 @@ int main()
                     break;
 
                 case 7:
-                    while(1)
-                    {
-                        int search_choice;
-                        printf("Enter 1 to search employee by ID.\n");
-                        printf("Enter 2 to search employee by Name.\n");
-                        scanf("%d", &search_choice);
-                        if(view_employee_by_parameters(employee, no_of_employees, search_choice) == WRONG_CHOICE)
-                        {
-                            printf("Wrong choice entered.\n");
-                            continue;
-                        }
-                        break;
-                    }
+                    view_employee_by_ID(employee, no_of_employees);
                     break;
+                    
 
                 case 8:
-                    write_emp_file(employee, no_of_employees);
+                    view_employee_by_name(employee, no_of_employees);
                     break;
 
                 case 9:
+                    write_emp_file(employee, no_of_employees);
+                    break;
+
+                case 10:
                     write_non_emp_file(non_employee, no_of_non_employees);
                     break;
             }
@@ -155,7 +138,9 @@ int main()
             continue;
         }
     }
+
     fclose(fp_emp);
     fclose(fp_non_emp);
+
     return 0;
 }
